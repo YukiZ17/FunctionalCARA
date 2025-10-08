@@ -1,5 +1,7 @@
 # FunctionalCARA
 
+## R documents introduction
+
 R file ufun: functions used in the simulations.
 
 Please run FunctionalCARA first to check your packages and load the following data:
