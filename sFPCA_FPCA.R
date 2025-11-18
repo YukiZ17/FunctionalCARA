@@ -31,7 +31,7 @@ for(j in 1:N){
   
   t.equal <- rbinom(n.sample,size=1,prob = 0.5)
   
-  pi.equal <- rep(alpha,n.sample)+ gamma*t.equal +(2*X.inside%*%t(phi.3)/921)
+  pi.equal <- rep(alpha,n.sample)+ gamma*t.equal +(4*X.inside%*%t(phi.3)/921)
   
   Y.outcome.equal<- rbinom(n.sample,1,(1/(1+exp(-pi.equal))))
   
@@ -115,7 +115,7 @@ for (j in 1:N){
     
     t.burnin <- rbinom(n.burnin,size=1,prob = 0.5)
     T.all <- c(T.all,t.burnin)
-    pi.burnin <- rep(alpha,n.burnin)+ gamma*t.burnin +(2*X.inside[1:n.burnin,]%*%t(phi.3)/921) #+(X.inside[1:n.burnin,]%*%t(phi.2)/921) #+(X.inside[1:n.burnin,]%*%t(phi.1)/921) #divided by 1600? 921?
+    pi.burnin <- rep(alpha,n.burnin)+ gamma*t.burnin +(4*X.inside[1:n.burnin,]%*%t(phi.3)/921) #+(X.inside[1:n.burnin,]%*%t(phi.2)/921) #+(X.inside[1:n.burnin,]%*%t(phi.1)/921) #divided by 1600? 921?
     Y.outcome.burnin<- rbinom(n.burnin,1,(1/(1+exp(-pi.burnin))))
     Y.all <- c(Y.all,Y.outcome.burnin)
     
@@ -166,7 +166,7 @@ for (j in 1:N){
       
       t.k <- rbinom(n.batch,size=1,prob =1/(1+exp(-Gamma.batch[k])))
       T.all <- c(T.all,t.k)
-      pi.k <- rep(alpha,n.batch)+ gamma*t.k +(2*X.k%*%t(phi.3)/921) #+(X.k%*%t(phi.2)/921) #+(X.k%*%t(phi.1)/921) #divided by 1600? 921?
+      pi.k <- rep(alpha,n.batch)+ gamma*t.k +(4*X.k%*%t(phi.3)/921) #+(X.k%*%t(phi.2)/921) #+(X.k%*%t(phi.1)/921) #divided by 1600? 921?
       Y.outcome.k<- rbinom(n.batch,1,(1/(1+exp(-pi.k))))
       Y.all <- c(Y.all,Y.outcome.k)
       
@@ -227,3 +227,4 @@ for (j in 1:N){
   
   
 }
+
