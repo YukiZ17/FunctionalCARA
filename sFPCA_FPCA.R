@@ -2,7 +2,7 @@
 
 ## Simulation parameter
 
-N <- 600
+N <- 1000
 
 theta.sfpca <- c(0.00001,0.0001,0.001,0.01,0.1,1)
 
@@ -227,4 +227,5 @@ for (j in 1:N){
   
   
 }
+
 
